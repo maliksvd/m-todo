@@ -22,18 +22,20 @@ export default function Filters({ categories, setFilter }: FiltersProps) {
 
   return (
     <div className="mb-4">
-      <Select value={selectedCategory} onValueChange={handleSelect}>
-        <SelectTrigger className="w-full py-4">
-          <SelectValue placeholder="filter by category" />
-        </SelectTrigger>
-        <SelectContent>
-          {categories.filter(Boolean).map((category) => (
-            <SelectItem key={category} value={category.toLowerCase()} className="lowercase">
-              {category.toLowerCase()}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      <div className="flex justify-between">
+        <Select value={selectedCategory} onValueChange={handleSelect}>
+          <SelectTrigger className="w-full py-4">
+            <SelectValue placeholder="filter by category" />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.filter(Boolean).map((category) => (
+              <SelectItem key={category} value={category.toLowerCase()} className="lowercase">
+                {category.toLowerCase()}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   )
 }

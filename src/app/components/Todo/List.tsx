@@ -89,7 +89,7 @@ export default function TodoList() {
   }
 
   return (
-    <div className="w-full max-w-xl">
+    <div className="w-full max-w-7xl md:max-w-xl">
       <h1 className="font-mono font-bold text-lg mb-4">m-todo</h1>
       <div className="flex flex-col w-full">
         <TodoForm addTodo={addTodo} />

@@ -29,15 +29,13 @@ export default function TodoItem({ todo, toggleTodo, deleteTodo }: TodoItemProps
       transition={{ duration: 0.6 }}
       className="relative"
     >
-      <Card className={`flex items-center justify-between mb-4 p-4 ${todo.completed ? 'opacity-50' : ''}`}>
+      <Card className={`flex items-center justify-between mb-4 p-4 cursor-pointer ${todo.completed ? 'opacity-50' : ''}`} onClick={() => toggleTodo(todo.id)}>
         <div className="flex items-center gap-2">
           <div className="flex items-center gap-2">
             <Checkbox id={todo.id.toString()} checked={todo.completed} onCheckedChange={() => toggleTodo(todo.id)} />
             <span className={`${todo.completed ? 'line-through' : ''} flex-1 text-xs font-mono`}>{todo.text}</span>
           </div>
-          <Badge variant="outline" className="text-xs">
-            {todo.category}
-          </Badge>
+          <Badge>{todo.category}</Badge>
         </div>
 
         <div>

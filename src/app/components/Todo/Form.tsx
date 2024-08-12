@@ -24,7 +24,7 @@ interface TodoFormProps {
 // zod schema
 const formSchema = z.object({
   text: z.string().min(1, 'Please enter a todo'),
-  category: z.enum(['personal', 'work', 'shopping']),
+  category: z.enum(['personal', 'work', 'travel', 'shopping']),
 })
 
 // form values
@@ -84,6 +84,7 @@ export default function TodoForm({ addTodo }: TodoFormProps) {
                     <SelectContent>
                       <SelectItem value="personal">personal</SelectItem>
                       <SelectItem value="work">work</SelectItem>
+                      <SelectItem value="travel">travel</SelectItem>
                       <SelectItem value="shopping">shopping</SelectItem>
                     </SelectContent>
                   </Select>
